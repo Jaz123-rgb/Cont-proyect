@@ -54,32 +54,23 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="form-group">
-                    <label for="txtIngres">Ingreso:</label>
-                    <input type="text" class="form-control" id="txtIngres" name="txtIngres"
+                    <label for="txtIngres">fecha:</label>
+                    <input type="date" class="form-control" id="txtIngres" name="txtIngres"
                         placeholder="Ingreso">
                 </div>
-
                 <div class="form-group">
-                    <label for="txtImagen">Imagen</label>
-                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
-                </div>
-                <div class="form-group">
-                    <label for="txtImagen">Imagen</label>
-                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
-                </div>
-                <div class="form-group">
-                    <label for="txtImagen">Imagen</label>
-                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
-                </div>
-                <div class="form-group">
-                    <label for="txtImagen">Imagen</label>
-                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
-                </div>
-                <div class="form-group">
-                    <label for="txtImagen">Imagen</label>
+                    <label for="txtImagen">Concepto</label>
                     <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
                 </div>
 
+                <div class="form-group">
+                    <label for="txtImagen">Importe</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <label for="txtImagen">Monot Total</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
 
                 <div class="btn-group" role="group" aria-label="">
                     <button type="submit" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
