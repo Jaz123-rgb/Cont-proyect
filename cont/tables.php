@@ -63,6 +63,22 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
                     <label for="txtImagen">Imagen</label>
                     <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
                 </div>
+                <div class="form-group">
+                    <label for="txtImagen">Imagen</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <label for="txtImagen">Imagen</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <label for="txtImagen">Imagen</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <label for="txtImagen">Imagen</label>
+                    <input type="text" class="form-control" id="txtImagen" name="txtImagen" placeholder="ID">
+                </div>
 
 
                 <div class="btn-group" role="group" aria-label="">
@@ -87,9 +103,12 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
         <thead>
             <tr>
                 <th>iD</th>
-                <th>Nombre</th>
-                <th>imagen</th>
+                <th>ingreso</th>
+                <th>seccion-3</th>
+                <th>seccion-3</th>
+                <th>seccion-3</th>
                 <th>Acciones</th>
+                
             </tr>
         </thead>
         <tbody>
