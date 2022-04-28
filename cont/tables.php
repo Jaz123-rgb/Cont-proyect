@@ -7,24 +7,24 @@ $txtDate = (isset($_POST['txtDate']))?$_POST['txtDate']:"";
 $txtConcept = (isset($_POST['txtConcepto']))?$_POST['txtConcepto']:"";
 $txtImporte = (isset($_POST['txtImporte']))?$_POST['txtImporte']:"";
 $txtIva = (isset($_POST['txtIvaC']))?$_POST['txtIvaC']:"";
-$txtmonTotal =  $txtImporte + ($txtImporte);
-echo $txtmonTotal;
 
 $accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
 include("../cont/config/db.php");
 
-
+$importe = $_POST['txtImporte'];
+$iva =  $_POST['txtIvaC'];
+$txtMonTotal = $importe + $iva;
 
 switch ($accion) {
     case "Agregar":
         // INSERT INTO `contabilidad`(`id`, `fecha`, `concept`, `importe`, `iva`, `monTotal`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
-        $sentenciaSQL = $conexion->prepare("INSERT INTO contabilidad(fecha, concept, importe, iva) VALUES (:fecha, :concept, :importe, :iva);");
+        $sentenciaSQL = $conexion->prepare("INSERT INTO contabilidad(fecha, concept, importe, iva, monTotal ) VALUES (:fecha, :concept, :importe, :iva, :monTotal);");
         $sentenciaSQL->bindParam(':concept',$txtConcept);
         $sentenciaSQL->bindParam(':fecha',$txtDate);
         $sentenciaSQL->bindParam(':importe',$txtImporte);
         $sentenciaSQL->bindParam(':iva',$txtIva);
-        $sentenciaSQL->bindParam(':MonTotal', $txtmonTotal);
+        $sentenciaSQL->bindParam(':monTotal',$txtMonTotal);
         $sentenciaSQL->execute();
 
         break;
@@ -85,7 +85,7 @@ $sum_miles3 += $row3['sum'];
                 </div>
                 <div class="form-group">
                     <label for="txtConcepto">Concepto</label>
-                    <input type="text" class="form-control" id="txtConcepto" name="txtConcepto" placeholder="Concepeto">
+                    <input type="text" class="form-control" id="txtConcepto" name="txtConcepto" placeholder="Concepto">
                 </div>
 
                 <div class="form-group">
@@ -97,8 +97,9 @@ $sum_miles3 += $row3['sum'];
                     <input type="number" class="form-control" id="txtIvaC" name="txtIvaC" placeholder="IVA">
                 </div>
                 <div class="form-group">
-                    <label for="txtmonTotal">Monto Total</label>
-                    <input type="number" class="form-control" id="txtmonTotal" name="txtmonTotal" placeholder="Ingresa el monto total">
+
+                       <label for="txtmonTotalsend"><h3>Monto total </h3></label>
+                    <label for="txtmonTotal"><h3> $<?php echo $txtMonTotal;   ?> </h3></label>
                 </div>
 
                 <div class="btn-group" role="group" aria-label="">
