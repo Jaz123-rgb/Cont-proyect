@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="nav navbar-nav">
-            <a class="nav-item nav-link active" href="#">Contabilidad basica<span
+            <a class="nav-item nav-link active" href="/tables.php">Contabilidad basica<span
                     class="sr-only">(current)</span></a>
     </nav>
     
