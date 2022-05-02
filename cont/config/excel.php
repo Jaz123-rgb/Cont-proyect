@@ -1,8 +1,11 @@
-<?php include('../cont/template/header.php')?>
+<?php
 
+header("Content-Type: application/xls");
+header("Content-Disposition: attachment; filename= productos.xls");
 
+?>
 <?php  
-include("../cont/config/db.php"); 
+include("../config/db.php"); 
 
 $sentenciaSQL = $conexion->prepare("SELECT * FROM contabilidadin");
 $sentenciaSQL->execute();
@@ -59,9 +62,7 @@ $sum_miles3 += $row3['sum'];
 }
 
 ?>
-
-<div class="col-md-6 table-bordered">
-    <table class="table">
+<table class="table">
         <thead>
             <h1>Tabla de Ingresos</h1>
             <tr>
@@ -83,12 +84,11 @@ $sum_miles3 += $row3['sum'];
                 <td>$ <?php echo $libro['importe']  ?></td>
                 <td>$ <?php echo $libro['iva']?></td>
                 <td>$ <?php echo $libro['monTotal'] ?></td>
-
             </tr>
         <?php   } ?>
         </tbody>
     </table>
-    <div class="col-md-6-6">
+
 <table class="table">
         <thead>
             <tr>
@@ -107,62 +107,7 @@ $sum_miles3 += $row3['sum'];
         </tbody>
     </table>
     
-</div>
-</div>
-
-
-<div class="col-md-6 table-bordered">
     <table class="table">
-        <thead>
-            <h1>Tabla de Egresos</h1>
-            <tr>
-                <th>iD</th>
-                <th>Fecha</th>
-                <th>Concepto</th>
-                <th>Importe</th>
-                <th>IVA</th>
-                <th>Monto Total</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-        <?php  foreach ($listaIn as $egreso) { ?>
-            <tr>
-                <td ><?php echo $egreso['id']; ?></td>
-                <td><?php echo $egreso['fecha'] ?></td>
-                <td><?php echo $egreso['concept'] ?></td>
-                <td>$ <?php echo $egreso['importe']  ?></td>
-                <td>$ <?php echo $egreso['iva']?></td>
-                <td>$ <?php echo $egreso['monTotal'] ?></td>
-
-            </tr>
-        <?php   } ?>
-        </tbody>
-    </table>
-    <div class="col-md-6-6">
-<table class="table">
-        <thead>
-            <tr>
-                <th>Total del importe</th>
-                <th>Total del importe con IVA</th>
-                <th>Total Monto total</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td >$ <?php  echo $sum_milesin; ?></td></td>
-                <td>$ <?php  echo $sum_milesin2; ?></td>
-                <td>$ <?php  echo $sum_milesin3; ?></td>
-            </tr>
-        </tbody>
-    </table>
-    
-</div>
-</div>
-
-<div class="col-md-6 table-bordered">
-<table class="table">
         <thead>
             <h1>Impuestos</h1>
             <tr>
@@ -201,22 +146,16 @@ $sum_miles3 += $row3['sum'];
                 <td>0.04</td>
                 <td><?php 
                 $ish = $sum_miles * 0.04;
-                
                 echo $ish
                  ?></td>
             </tr>
         </tbody>
     </table>
-
-</div>
-
-<div class="col-md-6 table-bordered">
-<table class="table">
+    <table class="table">
         <thead>
             <tr>
                 <th>Pago de <br>impuestos totales</th>
                 <th>Utilidad total</th>
-                
             </tr>
         </thead>
         <tbody>
@@ -225,10 +164,3 @@ $sum_miles3 += $row3['sum'];
                 <td><strong><h2>$ <?php echo $sum_miles3 + $sum_milesin3 ?> </h2></strong></td>
             </tr>
     </table>
-    <a name="" id="" class="btn btn-primary" href="../cont/config/excel.php" role="button"><h3>Convierte a Excel</h3></a>
-    <a name="" id="" class="btn btn-primary" href="../cont/tables.php" role="button"><h3>volver a ingresos</h3></a>
-</div>
-
-
-
-<?php include('../cont/template/footer.php')  ?> 

@@ -8,8 +8,8 @@ $txtConceptin = (isset($_POST['txtConceptoin']))?$_POST['txtConceptoin']:"";
 $txtImportein = (isset($_POST['txtImportein']))?$_POST['txtImportein']:"";
 $txtIvain = (isset($_POST['txtIvain']))?$_POST['txtIvain']:"";
 $accionin = (isset($_POST['accion']))?$_POST['accion']:"";
-$importe = $_POST['txtImportein'];
-$iva =  $_POST['txtIvain'];
+$importe =  isset($_POST['txtImportein']);
+$iva =  isset($_POST['txtIvain']);
 $txtMonTotalin = $importe + $iva;
 
 switch ($accionin) {

@@ -9,10 +9,12 @@ $txtIva = (isset($_POST['txtIvaC']))?$_POST['txtIvaC']:"";
 
 $accion = (isset($_POST['accion']))?$_POST['accion']:"";
 
-$importe = $_POST['txtImporte'];
-$iva =  $_POST['txtIvaC'];
-$txtMonTotal = $importe + $iva;
-
+$importe1 = isset($_POST['txtImporte']);
+$iva2 =    isset($_POST['txtIvaC']);
+$txtMonTotal = $importe1 + $iva2;
+// echo $importe1;
+// echo $iva2;
+// echo $txtMonTotal;
 switch ($accion) {
     case "Agregar":
         // INSERT INTO `contabilidad`(`id`, `fecha`, `concept`, `importe`, `iva`, `monTotal`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
